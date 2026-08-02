@@ -16,6 +16,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Segoe UI,Arial,sans-serif;
     background:#edf2f7;
@@ -32,6 +36,9 @@ body{
     background:#0f172a;
     color:white;
     padding:30px;
+    position:sticky;
+    top:0;
+    height:100vh;
 }
 
 .sidebar h1{
@@ -125,6 +132,10 @@ button{
     cursor:pointer;
 }
 
+button:hover{
+    opacity:0.9;
+}
+
 </style>
 
 </head>
@@ -137,12 +148,12 @@ button{
 
 <h1>🏡 Kaur</h1>
 
-<a href="#">🏠 Dashboard</a>
-<a href="#">💷 Offer process</a>
-<a href="#">🏡 Home reports</a>
-<a href="#">📄 Title review</a>
-<a href="#">📧 Templates</a>
-<a href="#">📝 File notes</a>
+<a href="#dashboard">🏠 Dashboard</a>
+<a href="#offer">💷 Offer process</a>
+<a href="#home">🏡 Home reports</a>
+<a href="#title">📄 Title review</a>
+<a href="#templates">📧 Templates</a>
+<a href="#notes">📝 File notes</a>
 
 </div>
 
@@ -162,7 +173,7 @@ placeholder="Search anything ..."
 
 <div class="container">
 
-<h2 class="section-title">
+<h2 class="section-title" id="dashboard">
 Dashboard
 </h2>
 
@@ -189,7 +200,8 @@ Dashboard
 </div>
 
 </div>
-<h2 class="section-title">
+
+<h2 class="section-title" id="offer">
 💷 Offer Process
 </h2>
 
@@ -213,7 +225,7 @@ Dashboard
 
 </div>
 
-<h2 class="section-title">
+<h2 class="section-title" id="home">
 🏡 Home Report Review
 </h2>
 
@@ -233,7 +245,7 @@ Dashboard
 
 </div>
 
-<h2 class="section-title">
+<h2 class="section-title" id="title">
 📄 Title Review
 </h2>
 
@@ -251,7 +263,8 @@ Dashboard
 </ul>
 
 </div>
-<h2 class="section-title">
+
+<h2 class="section-title" id="templates">
 📧 Templates
 </h2>
 
@@ -311,7 +324,7 @@ Copy template
 
 </div>
 
-<h2 class="section-title">
+<h2 class="section-title" id="notes">
 📝 File Notes
 </h2>
 
@@ -345,59 +358,39 @@ Copy template
 
 <script>
 
-function copyText(id) {
+function copyText(id){
 
-    const text =
-        document.getElementById(id);
+    const text = document.getElementById(id);
 
     text.select();
 
-    navigator.clipboard.writeText(
-        text.value
-    );
+    navigator.clipboard.writeText(text.value);
 
     alert("Copied.");
 }
 
-const searchInput =
-    document.getElementById(
-        "searchInput"
-    );
+const searchInput = document.getElementById("searchInput");
 
-searchInput.addEventListener(
-    "keyup",
-    function () {
+searchInput.addEventListener("keyup", function(){
 
-        const filter =
-            searchInput.value
-            .toLowerCase();
+    const filter = this.value.toLowerCase();
 
-        const cards =
-            document.querySelectorAll(
-                ".card"
-            );
+    const cards = document.querySelectorAll(".card");
 
-        cards.forEach(function(card){
+    cards.forEach(function(card){
 
-            const content =
-                card.innerText
-                .toLowerCase();
+        const content = card.innerText.toLowerCase();
 
-            if(
-                content.includes(filter)
-            ){
-                card.style.display =
-                    "block";
-            }
-            else{
-                card.style.display =
-                    "none";
-            }
+        if(content.includes(filter)){
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
 
-        });
+    });
 
-    }
-);
+});
 
 </script>
 
