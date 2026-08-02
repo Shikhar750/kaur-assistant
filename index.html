@@ -3,540 +3,189 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>Kaur Assistant</title>
 
-    <title>Kaur Assistant</title>
+<style>
 
-    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#edf2f7;
+    color:#1e293b;
+}
 
-        body{
-            font-family:Segoe UI, Arial, sans-serif;
-            background:#edf1f5;
-            color:#1e293b;
-        }
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
 
-        header{
-            background:#132238;
-            color:white;
-            padding:30px;
-            box-shadow:0 4px 15px rgba(0,0,0,0.15);
-        }
+.sidebar{
+    width:260px;
+    background:#0f172a;
+    color:white;
+    padding:30px;
+}
 
-        .header-top{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            gap:20px;
-        }
+.sidebar h1{
+    margin-bottom:30px;
+}
 
-        .logo{
-            font-size:32px;
-            font-weight:bold;
-        }
+.sidebar a{
+    display:block;
+    color:#d7dee8;
+    text-decoration:none;
+    margin-bottom:18px;
+}
 
-        .subtitle{
-            color:#c8d1dd;
-            margin-top:8px;
-        }
+.sidebar a:hover{
+    color:white;
+}
 
-        #searchInput{
-            margin-top:25px;
-            width:100%;
-            padding:15px;
-            border-radius:12px;
-            border:none;
-            outline:none;
-            font-size:16px;
-        }
+.content{
+    flex:1;
+}
 
-        .container{
-            padding:30px;
-        }
+header{
+    background:#132238;
+    color:white;
+    padding:30px;
+}
 
-        .dashboard-grid{
-            display:grid;
-            grid-template-columns:repeat(
-                auto-fit,
-                minmax(300px,1fr)
-            );
-            gap:25px;
-        }
+header h2{
+    margin-bottom:15px;
+}
 
-        .card{
-            background:white;
-            border-radius:18px;
-            padding:25px;
-            box-shadow:0 8px 25px rgba(0,0,0,0.08);
-            transition:0.3s;
-        }
+#searchInput{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+}
 
-        .card:hover{
-            transform:translateY(-3px);
-        }
+.container{
+    padding:30px;
+}
 
-        h2{
-            margin-bottom:15px;
-            color:#132238;
-        }
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-        li{
-            margin-bottom:10px;
-            list-style:none;
-        }
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
 
-        .badge{
-            display:inline-block;
-            padding:6px 12px;
-            border-radius:30px;
-            background:#eef2f8;
-            margin:5px;
-            font-size:13px;
-        }
+.card h3{
+    margin-bottom:15px;
+}
 
-        button{
-            border:none;
-            background:#132238;
-            color:white;
-            padding:12px 18px;
-            border-radius:10px;
-            cursor:pointer;
-            margin-top:15px;
-        }
+.section-title{
+    margin:35px 0 20px;
+}
 
-        button:hover{
-            opacity:0.9;
-        }
+.template{
+    background:#f8fafc;
+    border-radius:10px;
+    border:1px solid #dbe4ee;
+    padding:15px;
+    margin-top:15px;
+}
 
-        .section-title{
-            margin:40px 0 20px;
-        }
+textarea{
+    width:100%;
+    min-height:180px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #cbd5e1;
+}
 
-        .template-box{
-            border:1px solid #d8dee7;
-            border-radius:10px;
-            padding:15px;
-            margin-top:15px;
-            background:#fafafa;
-        }
+li{
+    list-style:none;
+    margin-bottom:10px;
+}
 
-        textarea{
-            width:100%;
-            min-height:180px;
-            padding:15px;
-            border-radius:10px;
-            border:1px solid #d5dce5;
-            resize:vertical;
-        }
+button{
+    background:#132238;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:10px 18px;
+    cursor:pointer;
+}
 
-    </style>
+</style>
 
 </head>
 
 <body>
 
+<div class="wrapper">
+
+<div class="sidebar">
+
+<h1>🏡 Kaur</h1>
+
+<a href="#">🏠 Dashboard</a>
+<a href="#">💷 Offer process</a>
+<a href="#">🏡 Home reports</a>
+<a href="#">📄 Title review</a>
+<a href="#">📧 Templates</a>
+<a href="#">📝 File notes</a>
+
+</div>
+
+<div class="content">
+
 <header>
 
-    <div class="header-top">
+<h2>Kaur Assistant</h2>
 
-        <div>
-
-            <div class="logo">
-                🏡 Kaur Assistant
-            </div>
-
-            <div class="subtitle">
-                Conveyancing workflows, templates and checklists
-            </div>
-
-        </div>
-
-    </div>
-
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search anything ..."
-    >
+<input
+type="text"
+id="searchInput"
+placeholder="Search anything ..."
+>
 
 </header>
 
 <div class="container">
 
-    <h1 class="section-title">
-        Dashboard
-    </h1>
-
-    <div class="dashboard-grid">
-
-        <div class="card">
-
-            <h2>📂 Processes</h2>
-
-            <ul>
-                <li>Offer process</li>
-                <li>Accepted offer process</li>
-                <li>Settlement process</li>
-                <li>Missives</li>
-            </ul>
-
-        </div>
-
-        <div class="card">
-
-            <h2>📧 Templates</h2>
-
-            <ul>
-                <li>Offer questionnaire</li>
-                <li>Client email</li>
-                <li>Estate agent email</li>
-                <li>File note</li>
-            </ul>
-
-        </div>
-
-        <div class="card">
-
-            <h2>📋 Checklists</h2>
-
-            <ul>
-                <li>Home report review</li>
-                <li>Title review</li>
-                <li>AML review</li>
-            </ul>
-
-        </div>
-
-        <div class="card">
-
-            <h2>⭐ Favourites</h2>
-
-            <span class="badge">
-                Offer process
-            </span>
-
-            <span class="badge">
-                Home report
-            </span>
-
-            <span class="badge">
-                Follow-up email
-            </span>
-
-        </div>
-
-    </div>
-
-        <h1 class="section-title">
-        Offer Process
-    </h1>
-
-    <div class="card">
-
-        <h2>
-            🏠 Offer submission workflow
-        </h2>
-
-        <p>
-            Follow the steps below when preparing and
-            submitting an offer.
-        </p>
-
-        <br>
-
-        <ul>
-
-            <li>☑ Receive client instructions</li>
-
-            <li>☑ Confirm property details</li>
-
-            <li>☑ Review the home report</li>
-
-            <li>☑ Review the title sheet</li>
-
-            <li>☑ Confirm the closing date</li>
-
-            <li>☑ Prepare the written offer</li>
-
-            <li>☑ Submit the offer</li>
-
-            <li>☑ Add the file note</li>
-
-            <li>☑ Schedule a follow-up reminder</li>
-
-            <li>☑ Update the Support 1 channel</li>
-
-            <li>
-                ☑ Obtain the delivery receipt from
-                Khushi or Shrishti
-            </li>
-
-        </ul>
-
-        <button>
-            Copy workflow
-        </button>
-
-    </div>
-
-    <h1 class="section-title">
-        Assignment Rules
-    </h1>
-
-    <div class="card">
-
-        <h2>
-            ⚖️ Rules
-        </h2>
-
-        <br>
-
-        <ul>
-
-            <li>
-                Cases should be assigned to the
-                conveyancing team only during the
-                offer stage.
-            </li>
-
-            <li>
-                At every other stage, the matter
-                should remain with the New Business
-                team.
-            </li>
-
-        </ul>
-
-    </div>
-
-    <h1 class="section-title">
-        Accepted Offer Process
-    </h1>
-
-    <div class="card">
-
-        <h2>
-            ✅ Accepted offer workflow
-        </h2>
-
-        <br>
-
-        <ul>
-
-            <li>☑ Notify the client.</li>
-
-            <li>☑ Update the matter.</li>
-
-            <li>☑ Obtain identification documents.</li>
-
-            <li>☑ Complete AML checks.</li>
-
-            <li>☑ Issue documentation.</li>
-
-            <li>☑ Contact the estate agent.</li>
-
-        </ul>
-
-    </div>
-
-        <h1 class="section-title">
-        Home Report Review
-    </h1>
-
-    <div class="card">
-
-        <h2>
-            🏡 Home Report Checklist
-        </h2>
-
-        <br>
-
-        <ul>
-
-            <li>☑ Market value</li>
-
-            <li>☑ Property type</li>
-
-            <li>☑ Energy report</li>
-
-            <li>☑ Category 1 items</li>
-
-            <li>☑ Category 2 items</li>
-
-            <li>☑ Category 3 items</li>
-
-            <li>☑ Surveyor comments</li>
-
-            <li>☑ Local authority information</li>
-
-        </ul>
-
-    </div>
-
-    <h1 class="section-title">
-        Title Review
-    </h1>
-
-    <div class="card">
-
-        <h2>
-            📄 Title Sheet Checklist
-        </h2>
-
-        <br>
-
-        <ul>
-
-            <li>☑ Ownership details</li>
-
-            <li>☑ Securities</li>
-
-            <li>☑ Burdens</li>
-
-            <li>☑ Conditions</li>
-
-            <li>☑ Servitudes</li>
-
-            <li>☑ Property description</li>
-
-        </ul>
-
-    </div>
-
-    <h1 class="section-title">
-        Estate Agent Template
-    </h1>
-
-    <div class="card">
-
-        <h2>
-            📧 Estate Agent Follow-up
-        </h2>
-
-        <div class="template-box">
-
-            <textarea>
-
-Dear [Estate Agent Name],
-
-I hope you are well.
-
-I write in relation to the above property on behalf of our mutual client.
-
-I would be grateful if you could provide an update when convenient.
-
-Kind regards,
-
-            </textarea>
-
-        </div>
-
-    </div>
-
-    <h1 class="section-title">
-        Client Template
-    </h1>
-
-    <div class="card">
-
-        <h2>
-            👤 Client Email Template
-        </h2>
-
-        <div class="template-box">
-
-            <textarea>
-
-Dear [Client Name],
-
-Thank you for your email.
-
-I shall review the matter and revert to you as soon as possible.
-
-Kind regards,
-
-            </textarea>
-
-        </div>
-
-    </div>
-
-     <h1 class="section-title">
-        File Notes
-    </h1>
-
-    <div class="card">
-
-        <h2>📝 File Note Template</h2>
-
-        <div class="template-box">
-
-            <textarea>
-
-Date:
-
-Person spoken to:
-
-Summary:
-
-Actions required:
-
-Follow-up date:
-
-            </textarea>
-
-        </div>
-
-    </div>
-
+<h2 class="section-title">
+Dashboard
+</h2>
+
+<div class="quick-grid">
+
+<div class="card">
+<h3>💷 Offer process</h3>
+<p>Offer workflow, submission steps and follow-ups.</p>
 </div>
 
-<script>
+<div class="card">
+<h3>🏡 Home reports</h3>
+<p>Review checklists and guidance notes.</p>
+</div>
 
-    const searchInput =
-        document.getElementById("searchInput");
+<div class="card">
+<h3>📄 Title review</h3>
+<p>Title-sheet review guidance.</p>
+</div>
 
-    searchInput.addEventListener(
-        "keyup",
-        function () {
+<div class="card">
+<h3>📧 Templates</h3>
+<p>Client, estate-agent and internal templates.</p>
+</div>
 
-            const filter =
-                searchInput.value.toLowerCase();
-
-            const cards =
-                document.querySelectorAll(".card");
-
-            cards.forEach(function(card){
-
-                const content =
-                    card.innerText.toLowerCase();
-
-                if(content.includes(filter)){
-                    card.style.display = "block";
-                }
-                else{
-                    card.style.display = "none";
-                }
-
-            });
-
-        }
-    );
-
-</script>
-
-</body>
-
-</html>   
-    
-    
+</div>
