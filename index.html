@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Kaur Assistant</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Segoe UI, Arial, sans-serif;
+            background:#edf1f5;
+            color:#1e293b;
+        }
+
+        header{
+            background:#132238;
+            color:white;
+            padding:30px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .header-top{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:20px;
+        }
+
+        .logo{
+            font-size:32px;
+            font-weight:bold;
+        }
+
+        .subtitle{
+            color:#c8d1dd;
+            margin-top:8px;
+        }
+
+        #searchInput{
+            margin-top:25px;
+            width:100%;
+            padding:15px;
+            border-radius:12px;
+            border:none;
+            outline:none;
+            font-size:16px;
+        }
+
+        .container{
+            padding:30px;
+        }
+
+        .dashboard-grid{
+            display:grid;
+            grid-template-columns:repeat(
+                auto-fit,
+                minmax(300px,1fr)
+            );
+            gap:25px;
+        }
+
+        .card{
+            background:white;
+            border-radius:18px;
+            padding:25px;
+            box-shadow:0 8px 25px rgba(0,0,0,0.08);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-3px);
+        }
+
+        h2{
+            margin-bottom:15px;
+            color:#132238;
+        }
+
+        li{
+            margin-bottom:10px;
+            list-style:none;
+        }
+
+        .badge{
+            display:inline-block;
+            padding:6px 12px;
+            border-radius:30px;
+            background:#eef2f8;
+            margin:5px;
+            font-size:13px;
+        }
+
+        button{
+            border:none;
+            background:#132238;
+            color:white;
+            padding:12px 18px;
+            border-radius:10px;
+            cursor:pointer;
+            margin-top:15px;
+        }
+
+        button:hover{
+            opacity:0.9;
+        }
+
+        .section-title{
+            margin:40px 0 20px;
+        }
+
+        .template-box{
+            border:1px solid #d8dee7;
+            border-radius:10px;
+            padding:15px;
+            margin-top:15px;
+            background:#fafafa;
+        }
+
+        textarea{
+            width:100%;
+            min-height:180px;
+            padding:15px;
+            border-radius:10px;
+            border:1px solid #d5dce5;
+            resize:vertical;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-top">
+
+        <div>
+
+            <div class="logo">
+                🏡 Kaur Assistant
+            </div>
+
+            <div class="subtitle">
+                Conveyancing workflows, templates and checklists
+            </div>
+
+        </div>
+
+    </div>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search anything ..."
+    >
+
+</header>
+
+<div class="container">
+
+    <h1 class="section-title">
+        Dashboard
+    </h1>
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+
+            <h2>📂 Processes</h2>
+
+            <ul>
+                <li>Offer process</li>
+                <li>Accepted offer process</li>
+                <li>Settlement process</li>
+                <li>Missives</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📧 Templates</h2>
+
+            <ul>
+                <li>Offer questionnaire</li>
+                <li>Client email</li>
+                <li>Estate agent email</li>
+                <li>File note</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📋 Checklists</h2>
+
+            <ul>
+                <li>Home report review</li>
+                <li>Title review</li>
+                <li>AML review</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>⭐ Favourites</h2>
+
+            <span class="badge">
+                Offer process
+            </span>
+
+            <span class="badge">
+                Home report
+            </span>
+
+            <span class="badge">
+                Follow-up email
+            </span>
+
+        </div>
+
+    </div>
