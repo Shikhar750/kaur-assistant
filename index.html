@@ -470,4 +470,73 @@ Kind regards,
         </div>
 
     </div>
+
+     <h1 class="section-title">
+        File Notes
+    </h1>
+
+    <div class="card">
+
+        <h2>📝 File Note Template</h2>
+
+        <div class="template-box">
+
+            <textarea>
+
+Date:
+
+Person spoken to:
+
+Summary:
+
+Actions required:
+
+Follow-up date:
+
+            </textarea>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    searchInput.addEventListener(
+        "keyup",
+        function () {
+
+            const filter =
+                searchInput.value.toLowerCase();
+
+            const cards =
+                document.querySelectorAll(".card");
+
+            cards.forEach(function(card){
+
+                const content =
+                    card.innerText.toLowerCase();
+
+                if(content.includes(filter)){
+                    card.style.display = "block";
+                }
+                else{
+                    card.style.display = "none";
+                }
+
+            });
+
+        }
+    );
+
+</script>
+
+</body>
+
+</html>   
+    
     
